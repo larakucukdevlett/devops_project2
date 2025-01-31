@@ -1,0 +1,28 @@
+version: '3.9'
+
+services:
+  control_node:
+    build: ./control_node
+    container_name: control_node
+    tty: true
+    volumes:
+      - ./control_node:/app
+    depends_on:
+      - managed_node1
+      - managed_node2
+
+  managed_node1:
+    build: ./managed_node
+    container_name: managed_node1
+    ports:
+      - "8022:22"
+      - "8081:80"
+    tty: true
+
+  managed_node2:
+    build: ./managed_node
+    container_name: managed_node2
+    ports:
+      - "8023:22"
+      - "8082:80"
+    tty: true

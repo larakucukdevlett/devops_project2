@@ -1,0 +1,3 @@
+[managed]
+managed_node1 ansible_host=managed_node1 ansible_user=root ansible_ssh_pass=root
+managed_node2 ansible_host=managed_node2 ansible_user=root ansible_ssh_pass=root
